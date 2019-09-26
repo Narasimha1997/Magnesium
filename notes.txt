@@ -1,0 +1,15 @@
+x86-64 Instruction encoding :
+
+Register numbers = rax = 0 = 0x000
+                   rbx = 3 = 0x011
+                   rcx = 1 = 0x001
+                   rdx = 2 = 0x010
+
+Instructions  - MOV , ADD, MUL, SUB, IDIV etc:
+1. If operands are 64-bit values, use 48 as REX prefix
+2. MOV opcode in long mode : 89
+3. ModReg encoding scheme = [2-bit Mode 3-bit source 3-bit destination]
+
+Example : mov rcx, rdx 
+it will be first interpreted as  = 48 89 Mode = 1100 rdx = 010 rcx = 001
+so opcode word will be : 48 89 D1
